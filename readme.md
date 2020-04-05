@@ -9,7 +9,7 @@ To randomly generate a grid world instance and apply the policy iteration algori
 * `n`: width and height of the maze
 * `p_barrier`: probability of a cell being a barrier
 * `r_barrier`: reward of barrier cells
-* `v0_val`: initial value for the value function $ v $
+* `v0_val`: initial value for the value function <img src="https://render.githubusercontent.com/render/math?math=v">.
 * `gamma`: discount rate parameter
 * `theta`: threshold parameter that defines when the change in the value function is negligible
 * `seed_nr`: seed number, for reproducible results
