@@ -39,7 +39,7 @@ has cells of a given type:
 
 * *terminal*: when the agent reaches that state, the task ends (episodic task). The value function for this state is 
 always 0;
-* *barrier*: the goal is that the agent avoids these type of cells when trying to reach the terminal states. These cells 
+* *barrier*: the agent must avoid these type of cells when trying to reach the terminal state. These cells 
 will be given a significantly smaller reward;  
 * *normal*: cells that are neither terminal nor barrier.
 
