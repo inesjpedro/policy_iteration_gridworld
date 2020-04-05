@@ -5,8 +5,7 @@ course on Coursera, I decided to implement the Policy Iteration algorithm to sol
 
 
 ## Usage
-To randomly generate a grid world and apply the policy iteration algorithm to find the best path to a terminal cell, you
-can run the `solve_maze.py` script using a set of arguments:
+To randomly generate a grid world instance and apply the policy iteration algorithm to find the best path to a terminal cell, you can run the `solve_maze.py` script using a set of arguments:
 * `n`: width and height of the maze
 * `p_barrier`: probability of a cell being a barrier
 * `r_barrier`: reward of barrier cells
@@ -16,6 +15,7 @@ can run the `solve_maze.py` script using a set of arguments:
 * `seed_nr`: seed number, for reproducible results
 
 Below is an example of the usage of this script with a particular set of parameters:
+
 ```python solve_maze.py --n 5 --p_barrier 0.1 --r_barrier -5 --v0_val 0 --gamma 0.9 --theta 0.01 --seed_nr 123```
 
 
