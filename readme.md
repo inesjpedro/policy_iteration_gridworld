@@ -45,7 +45,7 @@ will be given a significantly smaller reward;
 
 Every cell will have a reward of -1, with the exception of barrier cells, that have a more negative reward (e.g. -5).
 We will randomly build a grid of this type. Below is an example of such a grid using `n=5`, `p_barrier = 0.1` 
-(probability of a cell being of type barrier), and `r_barrier = -5` (reward of barrier cells).
+(probability of a cell being of type barrier), and `r_barrier = -5` (reward of barrier cells). The terminal cell is red, the barrier cells are gray, and the normal ones are white. 
 
 
 ![image info](images/grid.png)
