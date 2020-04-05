@@ -9,7 +9,7 @@ To randomly generate a grid world instance and apply the policy iteration algori
 * `n`: width and height of the maze
 * `p_barrier`: probability of a cell being a barrier
 * `r_barrier`: reward of barrier cells
-* `v0_val`: initial value for the value function <img src="https://render.githubusercontent.com/render/math?math=v">.
+* `v0_val`: initial value for the value function
 * `gamma`: discount rate parameter
 * `theta`: threshold parameter that defines when the change in the value function is negligible
 * `seed_nr`: seed number, for reproducible results
@@ -21,7 +21,7 @@ Below is an example of the usage of this script with a particular set of paramet
 
 ## Policy Iteration algorithm
 The policy iteration algorithm consists of three steps:
-1. *Initialization*: initialize the value function $ v $ as well as the policy (randomly).
+1. *Initialization*: initialize the value function as well as the policy (randomly).
 
 2. *Policy Evaluation*: uses the Bellman equation as an update rule to iteratively construct the value function.
 
@@ -34,7 +34,7 @@ Below is the pseudocode for the Policy Iteration procedure, from [Reinforcement 
 
 ## Code
 
-We will use the policy iteration algorithm to solve the famous grid world problem. We have an $$n \times n$$ grid, that 
+We will use the policy iteration algorithm to solve the famous grid world problem. We have an <img src="https://render.githubusercontent.com/render/math?math=n \times n"> grid, that 
 has cells of a given type:
 
 * *terminal*: when the agent reaches that state, the task ends (episodic task). The value function for this state is 
@@ -60,7 +60,7 @@ This problem can thus be formulated as a Markov Decision Process (MDP), where
 
 
 Starting with the equiprobable policy - the probability of the agent moving in every direction is 0.25 - and choosing 
-$\gamma = 0.9$ and $\theta = 0.01$, the policy iteration algorithm converges after 4 steps (a step is composed by 
+<img src="https://render.githubusercontent.com/render/math?math=\gamma = 0.9"> and <img src="https://render.githubusercontent.com/render/math?math=\theta = 0.01">, the policy iteration algorithm converges after 4 steps (a step is composed by 
 running both the policy evaluation and policy improvement procedures). Below you can see the value function (left) and 
 the policy (right) after each step of the algorithm.
 
