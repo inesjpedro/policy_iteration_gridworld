@@ -1,12 +1,10 @@
 """
-    Famous grid world problem from Reinforcement Learning. We define an end cell and `barrier` cells which have a more
+    Famous grid world problem from Reinforcement Learning. We define an end cell and `barrier` cells. The latter have a more
     negative reward, and so must be avoided. The goal is for the agent to learn to travel to the end cell in the best
-    way possible (maximum reward). For that we will try 2 techniques of dynamic programming:
-        * Policy Iteration
-        * Value Iteration
+    way possible (maximum reward). For that we will apply the policy iteration algorihm.
 
-    We are assuming:
-        * equiprobable policy;
+    We are assuming that:
+        * we start with the equiprobable policy;
         * when the action send us to a cell outside the grid, we will stay in the same cell.
 """
 
@@ -44,7 +42,7 @@ def policy_iteration(n, p_barrier, r_barrier, v0_val, gamma, theta, seed_nr):
     # Create initial environment
     env = build_grid(n, p_barrier, r_barrier, seed_nr)
     i = 0
-#    plot_grid(env)
+    plot_grid(env)
 
     # Generate initial value function and policy
     v = get_init_v(n, v0_val, env.e_x, env.e_y)
@@ -92,9 +90,6 @@ def policy_evaluation(env, v, pi, gamma, theta):
                 bellman_update(env, v, old_v, x, y, pi, gamma)
                 # Compute difference
                 delta = max(delta, abs(old_v[x, y] - v[x, y]))
-
-        # Plot new value function
-#        plot_v_values(v, env.n)
 
         iter += 1
 
@@ -330,7 +325,6 @@ def plot_grid(env):
 
 def plot_v_values(v, n):
     """Plots the value function in each state as a grid.
-    See https://matplotlib.org/3.1.1/gallery/images_contours_and_fields/image_annotated_heatmap.html for details.
 
     Args:
         v (array): numpy array representing the value function
@@ -458,13 +452,5 @@ if __name__ == "__main__":
     parser.add_argument(
         "--seed_nr", type=int, help='Seed number, for reproducible results.')
     args = parser.parse_args()
-
-#    n = 5
-#    p_barrier = 0.1
-#    r_barrier = -5
-#    v0_val = 0
-#    gamma = 0.9
-#    theta = 0.01
-#    seed_nr = 123
 
     policy_iteration(args.n, args.p_barrier, args.r_barrier, args.v0_val, args.gamma, args.theta, args.seed_nr)
